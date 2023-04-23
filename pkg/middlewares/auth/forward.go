@@ -68,7 +68,7 @@ func NewForward(ctx context.Context, next http.Handler, config dynamic.ForwardAu
 		CheckRedirect: func(r *http.Request, via []*http.Request) error {
 			return http.ErrUseLastResponse
 		},
-		Timeout: 30 * time.Second,
+		Timeout: time.Duration(config.TimeoutSeconds) * time.Second,
 	}
 
 	if config.TLS != nil {

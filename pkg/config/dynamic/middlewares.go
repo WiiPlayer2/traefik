@@ -215,6 +215,7 @@ type ForwardAuth struct {
 	// AuthRequestHeaders defines the list of the headers to copy from the request to the authentication server.
 	// If not set or empty then all request headers are passed.
 	AuthRequestHeaders []string `json:"authRequestHeaders,omitempty" toml:"authRequestHeaders,omitempty" yaml:"authRequestHeaders,omitempty" export:"true"`
+	TimeoutSeconds int64 `json:"timeoutSeconds,omitempty" toml:"timeoutSeconds,omitempty" yaml:"timeoutSeconds,omitempty" export:"true"`
 }
 
 // +k8s:deepcopy-gen=true
